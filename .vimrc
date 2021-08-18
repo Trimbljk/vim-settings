@@ -1,7 +1,4 @@
-" Jake Trimble's VIM settings "
-
-execute pathogen#infect()
-set runtimepath^=~/.vim/bundle/vim-closetag/plugin/closetag.vim
+"jake Trimble's VIM settings "
 
 " BASIC SETTINGS 
 
@@ -17,7 +14,15 @@ set cursorline
 set noerrorbells
 set foldmethod=manual
 set scrolloff=3
+set rnu
 set number
+set smartindent
+
+let mapleader = ","
+
+nnoremap <leader>wr <c-w><c-w>
+nnoremap <leader>vs :vsplit
+nnoremap <leader>qq :wq<cr>
 
 " COLORS
 
@@ -34,9 +39,7 @@ hi LineNr ctermfg=246
 
 set hlsearch
 hi Search ctermbg=208 ctermfg=32
-
-set list
-set listchars=tab:»·
+set incsearch
 
 " FILETYPE IDENTATION SETTINGS
 
@@ -46,6 +49,7 @@ autocmd Filetype html setlocal sw=4 ts=4 sts=4
 autocmd Filetype yaml setlocal sw=2 ts=2 sts=2 
 autocmd Filetype py setlocal sw=4 ts=4 sts=4
 autocmd Filetype css setlocal sw=4 ts=4 sts=4
+autocmd Filetype javascript setlocal sw=2 ts=2 sts=2
 
 
 " Map jk to <ESC> for easier insert mode exit
@@ -88,12 +92,15 @@ inoremap <c-d> <esc>ddi
 inoremap <c-u> <esc>vU
 
 " PYTHON RELATED
+call plug#begin('~/.vim/plugged')
 
-syn keyword pythonInclude from import
-syn keyword pythonOperator and in is not or
-syn keyword pythonRepeat for while
-hi pythonInclude ctermfg=33
-hi pythonOperator ctermfg=76 cterm=bold
-hi pythonRepeat ctermfg=76 cterm=bold
-hi pythonExtraOperator cterm=bold
-syn match pythonExtraOperator "\%([~!^&|*/%+-]\|\%(class\s*\)\@<!<<\|<=>\|<=\|\%(<\|\<class\s\+\u\w*\s*\)\@<!<[^<]\@=\|===\|==\|=\~\|>>\|>=\|=\@<!>\|\*\*\|\.\.\.\|\.\.\|::\|=\)"
+	Plug 'vim-airline/vim-airline'
+	Plug 'valloric/youcompleteme'
+	Plug 'elzr/vim-json'
+	Plug 'tpope/vim-surround'
+	Plug 'sheerun/vim-polyglot'
+
+
+call plug#end()
+
+
