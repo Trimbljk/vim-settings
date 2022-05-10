@@ -107,6 +107,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'elzr/vim-json'
 	Plug 'tpope/vim-surround'
 	Plug 'sheerun/vim-polyglot'
+	Plug 'tpope/vim-fugitive'
+	Plug 'itchyny/vim-cursorword'
 
 
 call plug#end()
