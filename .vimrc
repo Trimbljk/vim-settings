@@ -91,10 +91,18 @@ nnoremap <space> viw
 inoremap <c-d> <esc>ddi
 inoremap <c-u> <esc>vU
 
+" NERDTree
+
+noremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 " PYTHON RELATED
 call plug#begin('~/.vim/plugged')
 
 	Plug 'vim-airline/vim-airline'
+	Plug 'preservim/nerdtree'
 	Plug 'valloric/youcompleteme'
 	Plug 'elzr/vim-json'
 	Plug 'tpope/vim-surround'
